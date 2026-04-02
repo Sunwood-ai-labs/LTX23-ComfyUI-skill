@@ -1,0 +1,4 @@
+interface:
+  display_name: "LTX2.3 ComfyUI TI2V Audio"
+  short_description: "Operate Isi-dev's LTX2.3 ComfyUI TI2V+audio workflow"
+  default_prompt: "Use $ltx23-comfyui-ti2v-audio to set up or tune the LTX2.3 ComfyUI text/image plus audio to video workflow."
