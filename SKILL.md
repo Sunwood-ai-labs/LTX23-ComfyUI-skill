@@ -19,6 +19,7 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
 - Read [references/source-materials.md](./references/source-materials.md) if provenance or upstream comparison matters.
 - Read [references/setup-and-models.md](./references/setup-and-models.md) before environment or model work.
 - Read [references/experiment-tracking.md](./references/experiment-tracking.md) when running real sweeps or comparing model variants on the remote GPU machine.
+- Read [references/operational-lessons.md](./references/operational-lessons.md) before repeating a setup or generation workflow that previously failed.
 - Read [references/usage-and-parameters.md](./references/usage-and-parameters.md) before changing prompts or generation settings.
 - Use [sources/api/ltx23-ti2v-audio-api-prompt.json](./sources/api/ltx23-ti2v-audio-api-prompt.json) as the committed API-format base prompt when queueing runs directly through ComfyUI `/prompt`.
 - If you add Python helpers in this repo, run them with `uv run ...`.
@@ -63,9 +64,11 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
 
 1. If [sources/api/ltx23-ti2v-audio-api-prompt.json](./sources/api/ltx23-ti2v-audio-api-prompt.json) exists and the upstream workflow has not changed, use it instead of repeating UI-to-API conversion.
 2. If the operator is on Windows, prefer the launcher scripts over hand-running remote bash. They already normalize line endings and protect against stale install directories.
-3. When a comparison batch is about models, keep prompt, image, audio, and duration fixed unless the user explicitly asks to vary them.
-4. Record generation time and GPU headroom together. Peak VRAM without timing context is not enough for capacity planning.
-5. If output files are copied back locally, verify local file sizes against the remote originals before trusting the comparison set.
+3. Re-check CUDA visibility before long runs, not only after setup.
+4. Treat stale `/content/ComfyUI` directories and broken host `pip` config as known failure modes.
+5. When a comparison batch is about models, keep prompt, image, audio, and duration fixed unless the user explicitly asks to vary them.
+6. Record generation time and GPU headroom together. Peak VRAM without timing context is not enough for capacity planning.
+7. If output files are copied back locally, verify local file sizes against the remote originals before trusting the comparison set.
 
 ## Default Operating Model
 

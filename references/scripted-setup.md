@@ -22,6 +22,8 @@ The remote installer reproduces the notebook's setup intent and adds guards for 
 - installs custom-node requirements
 - downloads the notebook's core models and the default distilled LoRA
 
+See [operational-lessons.md](./operational-lessons.md) for the broader recurrence notes from real setup and generation runs.
+
 ## Default invocation
 
 From Windows PowerShell:

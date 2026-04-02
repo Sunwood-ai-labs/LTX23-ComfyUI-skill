@@ -51,3 +51,5 @@ This repository prefers a script-first workflow for preparing a remote GPU machi
   - look for stale directories or root-owned remnants
 - remote bash behaves differently from the notebook:
   - use the launcher scripts instead of replaying notebook shell manually
+- repeated setup or generation failures:
+  - review [the operational lessons](https://github.com/Sunwood-ai-labs/LTX23-ComfyUI-skill/blob/main/references/operational-lessons.md)

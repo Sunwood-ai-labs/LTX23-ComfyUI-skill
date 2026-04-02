@@ -77,6 +77,7 @@ The current automation handles three issues that often break ad hoc remote setup
 - [API prompt source](./sources/api/README.md)
 - [Setup and models reference](./references/setup-and-models.md)
 - [Experiment tracking reference](./references/experiment-tracking.md)
+- [Operational lessons](./references/operational-lessons.md)
 - [Workflow and parameters reference](./references/usage-and-parameters.md)
 - [Source materials and provenance](./references/source-materials.md)
 - [Experiment manifests](./experiments/)
@@ -105,6 +106,14 @@ The current automation handles three issues that often break ad hoc remote setup
 - [scripts](./scripts/): remote GPU setup and start automation
 - [experiments](./experiments/): committed metadata for real generation batches
 - [sources/api](./sources/api/): committed API-format prompt data
+
+## 🧯 Lessons Learned
+
+- Re-check CUDA visibility before long runs, not only after setup day.
+- Prefer the committed API prompt over one-off UI re-export when the workflow is unchanged.
+- Keep prompt, image, audio, and duration fixed for comparison batches unless the batch goal explicitly changes them.
+- Verify local file size after copying outputs back from the remote machine.
+- Record generation time, peak VRAM, and headroom with every real batch.
 
 ## 🪪 License
 

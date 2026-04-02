@@ -52,6 +52,7 @@ experiments/
 - Keep generated videos out of git unless there is a strong reason to publish them.
 - Commit the metadata and summary, not the heavy media files.
 - If prompt, image, or audio are fixed for a batch, write that once at the top-level batch metadata rather than repeating it in every run.
+- After local download, compare the local file size with the recorded remote size so partial transfers do not silently pass.
 
 ## Batch comparison rules
 
