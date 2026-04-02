@@ -28,6 +28,6 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
-$normalize = "python3 -c `"from pathlib import Path; p = Path(r'$remoteScript'); p.write_bytes(p.read_bytes().replace(b'\r\n', b'\n').replace(b'\r', b'\n'))`""
-& ssh @sshArgs "$User@$Hostname" "$normalize && bash $remoteScript $($remoteArgs -join ' ')"
+$remoteCommand = "tr -d '\r' < $remoteScript > ${remoteScript}.lf && mv ${remoteScript}.lf $remoteScript && bash $remoteScript $($remoteArgs -join ' ')"
+& ssh @sshArgs "$User@$Hostname" $remoteCommand
 exit $LASTEXITCODE

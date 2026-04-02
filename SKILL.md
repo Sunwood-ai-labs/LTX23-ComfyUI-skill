@@ -1,6 +1,6 @@
 ---
 name: ltx23-comfyui-ti2v-audio
-description: Use when you need to run, configure, explain, or adapt Isi-dev style LTX 2.3 ComfyUI workflows for text-to-video or image-to-video with audio, including Colab bootstrap, App JSON controls, prompt handling, lip-sync audio flow, and model or custom-node setup.
+description: Use when you need to run, configure, explain, or adapt Isi-dev style LTX 2.3 ComfyUI workflows for text-to-video or image-to-video with audio, including remote GPU machine bootstrap, App JSON controls, prompt handling, lip-sync audio flow, and model or custom-node setup.
 ---
 
 # LTX2.3 ComfyUI TI2V + Audio
@@ -11,8 +11,8 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
 
 - Preserve the upstream artifacts under `sources/upstream/isi-dev/` as read-only references.
 - Prefer the scripted bootstrap path first.
-  - local setup launcher: [scripts/run-colab-setup.ps1](./scripts/run-colab-setup.ps1)
-  - local start launcher: [scripts/run-colab-start.ps1](./scripts/run-colab-start.ps1)
+  - local setup launcher: [scripts/run-remote-gpu-setup.ps1](./scripts/run-remote-gpu-setup.ps1)
+  - local start launcher: [scripts/run-remote-gpu-start.ps1](./scripts/run-remote-gpu-start.ps1)
   - remote installer: [scripts/setup-remote-ltx23-comfyui.sh](./scripts/setup-remote-ltx23-comfyui.sh)
   - remote starter: [scripts/start-remote-comfyui.sh](./scripts/start-remote-comfyui.sh)
   - detailed usage: [references/scripted-setup.md](./references/scripted-setup.md)
@@ -24,15 +24,15 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
 ## Choose the Source of Truth
 
 - Use the App JSON when the task is "import this into ComfyUI" or "explain which controls the App exposes".
-- Use the notebook when the task is "bootstrap Colab / ComfyUI" or "recover the dependency list".
-- When the task is actual environment setup on a remote Linux or Colab host, prefer running the scripted bootstrap that was derived from the notebook instead of replaying notebook shell lines manually.
+- Use the notebook when the task is "bootstrap the remote GPU machine / ComfyUI stack" or "recover the dependency list".
+- When the task is actual environment setup on a remote Linux GPU host, prefer running the scripted bootstrap that was derived from the notebook instead of replaying notebook shell lines manually.
 - When notebook notes and graph internals disagree, prefer the actual JSON graph for exposed controls and use the notes as soft operating guidance. Call out mismatches instead of flattening them.
 
 ## Scripted Setup Rules
 
-1. Use [scripts/run-colab-setup.ps1](./scripts/run-colab-setup.ps1) from Windows when the operator has an SSH path to the remote host.
+1. Use [scripts/run-remote-gpu-setup.ps1](./scripts/run-remote-gpu-setup.ps1) from Windows when the operator has an SSH path to the remote GPU machine.
 2. The setup launcher streams and runs [scripts/setup-remote-ltx23-comfyui.sh](./scripts/setup-remote-ltx23-comfyui.sh) on the remote side.
-3. Start the service with [scripts/run-colab-start.ps1](./scripts/run-colab-start.ps1), which streams [scripts/start-remote-comfyui.sh](./scripts/start-remote-comfyui.sh).
+3. Start the service with [scripts/run-remote-gpu-start.ps1](./scripts/run-remote-gpu-start.ps1), which streams [scripts/start-remote-comfyui.sh](./scripts/start-remote-comfyui.sh).
 4. Keep the notebook as the source of truth for dependency and model selection, but centralize operational fixes in the script.
 5. Preserve the script guards for:
    - `LD_LIBRARY_PATH=/usr/lib64-nvidia`

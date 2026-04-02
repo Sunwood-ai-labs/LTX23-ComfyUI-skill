@@ -1,17 +1,17 @@
 # Scripted Setup
 
-Use the scripts in this repository instead of replaying the notebook manually whenever you have SSH access to a remote host.
+Use the scripts in this repository instead of replaying the notebook manually whenever you have SSH access to a remote GPU machine.
 
 ## Files
 
-- Local setup launcher: [../scripts/run-colab-setup.ps1](../scripts/run-colab-setup.ps1)
-- Local start launcher: [../scripts/run-colab-start.ps1](../scripts/run-colab-start.ps1)
+- Local setup launcher: [../scripts/run-remote-gpu-setup.ps1](../scripts/run-remote-gpu-setup.ps1)
+- Local start launcher: [../scripts/run-remote-gpu-start.ps1](../scripts/run-remote-gpu-start.ps1)
 - Remote installer: [../scripts/setup-remote-ltx23-comfyui.sh](../scripts/setup-remote-ltx23-comfyui.sh)
 - Remote starter: [../scripts/start-remote-comfyui.sh](../scripts/start-remote-comfyui.sh)
 
 ## What the scripts do
 
-The remote installer reproduces the notebook's setup intent and adds guards for the SSH-hosted Colab case:
+The remote installer reproduces the notebook's setup intent and adds guards for the SSH-hosted remote GPU machine case:
 
 - exports `LD_LIBRARY_PATH=/usr/lib64-nvidia` so the remote shell can see the GPU driver libraries
 - neutralizes broken host-wide pip logging with `PIP_CONFIG_FILE=/dev/null`
@@ -27,7 +27,7 @@ The remote installer reproduces the notebook's setup intent and adds guards for 
 From Windows PowerShell:
 
 ```powershell
-.\scripts\run-colab-setup.ps1 `
+.\scripts\run-remote-gpu-setup.ps1 `
   -Hostname skill-samples-letting-tasks.trycloudflare.com `
   -User maki `
   -RemoteInstallDir /content/ComfyUI
@@ -36,7 +36,7 @@ From Windows PowerShell:
 Then start ComfyUI:
 
 ```powershell
-.\scripts\run-colab-start.ps1 `
+.\scripts\run-remote-gpu-start.ps1 `
   -Hostname skill-samples-letting-tasks.trycloudflare.com `
   -User maki `
   -RemoteInstallDir /content/ComfyUI `
@@ -70,4 +70,4 @@ Use the raw notebook only when:
 
 - a specific dependency step is failing and you need to compare line-by-line behavior
 - the upstream notebook changes and the scripts have not been updated yet
-- you are debugging a new host type that does not match the current Colab-over-SSH assumptions
+- you are debugging a new host type that does not match the current remote-GPU-over-SSH assumptions

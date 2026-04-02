@@ -4,8 +4,8 @@
 
 Use the script-first bootstrap by default:
 
-- local setup launcher: [../scripts/run-colab-setup.ps1](../scripts/run-colab-setup.ps1)
-- local start launcher: [../scripts/run-colab-start.ps1](../scripts/run-colab-start.ps1)
+- local setup launcher: [../scripts/run-remote-gpu-setup.ps1](../scripts/run-remote-gpu-setup.ps1)
+- local start launcher: [../scripts/run-remote-gpu-start.ps1](../scripts/run-remote-gpu-start.ps1)
 - remote installer: [../scripts/setup-remote-ltx23-comfyui.sh](../scripts/setup-remote-ltx23-comfyui.sh)
 - remote starter: [../scripts/start-remote-comfyui.sh](../scripts/start-remote-comfyui.sh)
 - operator guide: [scripted-setup.md](./scripted-setup.md)
@@ -35,7 +35,7 @@ For the provided App V3 workflow, everything except `ComfyUI-Manager` should be 
 
 ## Remote bootstrap quirks already observed
 
-The current Colab-over-SSH environment needed three concrete fixes before the notebook setup became automatable:
+The current remote GPU machine accessed over SSH needed three concrete fixes before the notebook setup became automatable:
 
 - `LD_LIBRARY_PATH=/usr/lib64-nvidia` had to be exported so `nvidia-smi` and `torch.cuda` could see the L4 GPU.
 - `PIP_CONFIG_FILE=/dev/null` had to be set because the host's global pip config forced `log=/var/log/pip.log`, which is not writable for the normal user.
@@ -115,7 +115,7 @@ The upstream custom-audio note mentions `models\\diffusion_models` near the MelB
 
 The notebook supports four exposure patterns:
 
-- default Colab native port forwarding
+- default notebook-native port forwarding
 - `use_cloudflare`
 - `use_ngrok`
 - `use_interface_in_cell`

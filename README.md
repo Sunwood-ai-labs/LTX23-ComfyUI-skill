@@ -10,10 +10,10 @@ This workspace is on Windows, so `Skill.md` and `SKILL.md` resolve to the same f
 
 - [SKILL.md](./SKILL.md)
   - Main skill instructions
-- [scripts/run-colab-setup.ps1](./scripts/run-colab-setup.ps1)
-  - Windows launcher that streams the remote setup script over SSH
-- [scripts/run-colab-start.ps1](./scripts/run-colab-start.ps1)
-  - Windows launcher that starts ComfyUI on the remote host
+- [scripts/run-remote-gpu-setup.ps1](./scripts/run-remote-gpu-setup.ps1)
+  - Windows launcher that streams the remote setup script to a remote GPU machine over SSH
+- [scripts/run-remote-gpu-start.ps1](./scripts/run-remote-gpu-start.ps1)
+  - Windows launcher that starts ComfyUI on the remote GPU machine
 - [scripts/setup-remote-ltx23-comfyui.sh](./scripts/setup-remote-ltx23-comfyui.sh)
   - Remote Linux bootstrap script derived from the upstream notebook
 - [scripts/start-remote-comfyui.sh](./scripts/start-remote-comfyui.sh)
@@ -23,7 +23,7 @@ This workspace is on Windows, so `Skill.md` and `SKILL.md` resolve to the same f
 - [references/source-materials.md](./references/source-materials.md)
   - Upstream URLs, local archive paths, and source roles
 - [references/setup-and-models.md](./references/setup-and-models.md)
-  - Colab and ComfyUI setup, custom nodes, and required models
+  - remote GPU machine and ComfyUI setup, custom nodes, and required models
 - [references/usage-and-parameters.md](./references/usage-and-parameters.md)
   - App inputs, internal parameters, audio path, and prompting notes
 - [sources/upstream/isi-dev/](./sources/upstream/isi-dev/)
@@ -34,8 +34,8 @@ This workspace is on Windows, so `Skill.md` and `SKILL.md` resolve to the same f
 ## Usage
 
 1. Open [SKILL.md](./SKILL.md).
-2. For remote setup, run [scripts/run-colab-setup.ps1](./scripts/run-colab-setup.ps1).
-3. Start ComfyUI with [scripts/run-colab-start.ps1](./scripts/run-colab-start.ps1).
+2. For remote setup, run [scripts/run-remote-gpu-setup.ps1](./scripts/run-remote-gpu-setup.ps1).
+3. Start ComfyUI with [scripts/run-remote-gpu-start.ps1](./scripts/run-remote-gpu-start.ps1).
 4. Read [references/scripted-setup.md](./references/scripted-setup.md) for the script-first bootstrap flow.
 5. Read [references/source-materials.md](./references/source-materials.md) when provenance matters.
 6. Read [references/setup-and-models.md](./references/setup-and-models.md) for environment and model setup.
