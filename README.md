@@ -1,54 +1,43 @@
-# LTX2.3 ComfyUI TI2V + Audio Skill
+# LTX2.3 ComfyUI Skill Repo
 
-`Isi-dev` の LTX 2.3 系 ComfyUI 資料をもとに、Text/Image + Audio to Video を扱うための Codex スキル用リポジトリです。依頼どおり `Skill.md` を置きつつ、Codex 互換用の `SKILL.md` も同内容で揃えています。
+This repository packages Isi-dev's `LTX2.3 for Text & Image to Video+Audio with ComfyUI` as a reusable local Codex skill repo. The upstream notebook and App JSON are preserved as source artifacts, while setup notes and parameter guidance live in `SKILL.md` and `references/`.
 
-## 収録内容
+## About `Skill.md`
 
-- `Skill.md`
-  - 依頼どおりのメイン文書
-- `SKILL.md`
-  - Codex スキル互換用ミラー
-- `references/source-materials.md`
-  - 参照元 URL、ローカル保存物、由来の整理
-- `references/setup-and-models.md`
-  - Colab / ComfyUI セットアップ、custom nodes、モデル配置
-- `references/usage-and-parameters.md`
-  - App 入力、内部パラメータ、音声経路、運用上の注意
-- `sources/upstream/isi-dev/`
-  - 元の Notebook / App JSON を退避した参照専用領域
+This workspace is on Windows, so `Skill.md` and `SKILL.md` resolve to the same file. The canonical file in this repo is [SKILL.md](./SKILL.md), and it satisfies the requested `./Skill.md` path in this environment.
 
-## 参照元
+## Contents
 
-- [ComfyUI_LTX2_3](https://github.com/Isi-dev/Google-Colab_Notebooks/tree/main/ComfyUI/ComfyUI_LTX2_3)
-- [Google-Colab_Notebooks](https://github.com/Isi-dev/Google-Colab_Notebooks/tree/main)
+- [SKILL.md](./SKILL.md)
+  - Main skill instructions
+- [references/source-materials.md](./references/source-materials.md)
+  - Upstream URLs, local archive paths, and source roles
+- [references/setup-and-models.md](./references/setup-and-models.md)
+  - Colab and ComfyUI setup, custom nodes, and required models
+- [references/usage-and-parameters.md](./references/usage-and-parameters.md)
+  - App inputs, internal parameters, audio path, and prompting notes
+- [sources/upstream/isi-dev/](./sources/upstream/isi-dev/)
+  - Archived notebook and App JSON
+- [agents/openai.yaml](./agents/openai.yaml)
+  - Minimal UI metadata for the skill
 
-## 使い方
+## Usage
 
-1. Codex に `Skill.md` か `SKILL.md` を読ませる
-2. 必要に応じて `references/` を追加で読む
-3. `sources/upstream/isi-dev/LTX_2.3_Image_or_Text_&_Audio_2_Video_App_V3.json` を ComfyUI に読み込む
-4. `sources/upstream/isi-dev/ComfyUI_LTX2_3_TI2V.ipynb` を Colab セットアップや依存確認の参照に使う
+1. Open [SKILL.md](./SKILL.md).
+2. Read [references/source-materials.md](./references/source-materials.md) when provenance matters.
+3. Read [references/setup-and-models.md](./references/setup-and-models.md) for environment and model setup.
+4. Read [references/usage-and-parameters.md](./references/usage-and-parameters.md) for workflow behavior and tuning.
+5. If you want to edit the upstream workflow, copy it out of `sources/upstream/isi-dev/` first.
 
-## リポジトリ構成
+## Upstream References
 
-```text
-.
-|- Skill.md
-|- SKILL.md
-|- README.md
-|- agents/
-|  `- openai.yaml
-|- references/
-|  |- source-materials.md
-|  |- setup-and-models.md
-|  `- usage-and-parameters.md
-`- sources/upstream/isi-dev/
-   |- ComfyUI_LTX2_3_TI2V.ipynb
-   `- LTX_2.3_Image_or_Text_&_Audio_2_Video_App_V3.json
-```
+- [Isi-dev / Google-Colab_Notebooks](https://github.com/Isi-dev/Google-Colab_Notebooks/tree/main)
+- [Isi-dev / ComfyUI_LTX2_3](https://github.com/Isi-dev/Google-Colab_Notebooks/tree/main/ComfyUI/ComfyUI_LTX2_3)
+- [Lightricks / LTX-2](https://github.com/Lightricks/LTX-2)
+- [Lightricks / ComfyUI-LTXVideo](https://github.com/Lightricks/ComfyUI-LTXVideo/)
 
-## 方針
+## Repo Rules
 
-- upstream の JSON / Notebook は `sources/upstream/isi-dev/` に固定し、編集せず参照専用として扱います。
-- スキル本文は短く保ち、詳細は `references/` に分離します。
-- このリポジトリでは Python を使う補助作業を `uv run ...` 前提で扱います。
+- Keep the upstream JSON and notebook under `sources/upstream/isi-dev/`.
+- Keep the main skill concise and move detail into `references/`.
+- Use `uv run ...` for Python-based helper checks.
