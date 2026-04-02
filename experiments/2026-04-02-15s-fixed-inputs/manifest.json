@@ -25,7 +25,8 @@
       },
       "execution": {
         "prompt_id": "ba1a69b2-4b0b-4bfa-823e-f94b8482954f",
-        "status": "success"
+        "status": "success",
+        "generation_time_seconds": 471.443
       },
       "output": {
         "filename": "exp01-q4km-960x544-vocals-on_00001-audio.mp4",
@@ -50,7 +51,8 @@
       },
       "execution": {
         "prompt_id": "8d1d5174-dcb8-4705-ac15-46d089d4185a",
-        "status": "success"
+        "status": "success",
+        "generation_time_seconds": 461.606
       },
       "output": {
         "filename": "exp02-q4_1-960x544-vocals-on_00001-audio.mp4",
@@ -75,7 +77,8 @@
       },
       "execution": {
         "prompt_id": "fc119049-ad6e-4a1b-9e8c-4cc466c923ca",
-        "status": "success"
+        "status": "success",
+        "generation_time_seconds": 480.44
       },
       "output": {
         "filename": "exp03-q5km-960x544-vocals-on_00001-audio.mp4",
@@ -100,7 +103,8 @@
       },
       "execution": {
         "prompt_id": "64a2c734-ce22-4b4c-885d-5304dc49a76c",
-        "status": "success"
+        "status": "success",
+        "generation_time_seconds": 458.638
       },
       "output": {
         "filename": "exp04-q4km-960x544-vocals-off_00001-audio.mp4",
