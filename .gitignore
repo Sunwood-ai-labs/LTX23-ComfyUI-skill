@@ -5,9 +5,12 @@ Thumbs.db
 .ruff_cache/
 .venv/
 .uv-cache/
+node_modules/
 __pycache__/
 *.pyc
 output/
 outputs/
 temp/
 config.yml
+docs/.vitepress/cache/
+docs/.vitepress/dist/
