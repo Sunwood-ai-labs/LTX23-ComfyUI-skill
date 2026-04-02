@@ -39,3 +39,15 @@
 - global pip config 崩れ
 - stale な install directory
 - low-VRAM 向け起動引数
+
+## 失敗時チェック
+
+- GPU が見えない:
+  - `LD_LIBRARY_PATH=/usr/lib64-nvidia` を確認
+  - `torch.cuda.is_available()` または `/system_stats` を確認
+- `pip` が permission で落ちる:
+  - `PIP_CONFIG_FILE=/dev/null` を確認
+- `/content/ComfyUI` の clone が失敗する:
+  - stale directory や root-owned remnant を疑う
+- notebook の shell を手で打って挙動がずれる:
+  - launcher script を優先して CRLF と stale dir 対策を踏ませる

@@ -52,3 +52,9 @@ experiments/
 - Keep generated videos out of git unless there is a strong reason to publish them.
 - Commit the metadata and summary, not the heavy media files.
 - If prompt, image, or audio are fixed for a batch, write that once at the top-level batch metadata rather than repeating it in every run.
+
+## Batch comparison rules
+
+- If the goal is model comparison, keep prompt, image, audio, and duration fixed.
+- If the goal is timeline coverage, record `segment_start_seconds` and `segment_end_target_seconds`.
+- If you copy outputs back locally, compare local file sizes with the remote originals before trusting the set.

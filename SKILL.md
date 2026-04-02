@@ -59,6 +59,14 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
 4. Prefer comparing one or two variables at a time so the manifest stays readable.
 5. If the user says prompt or image should stay fixed, do not change them across the batch.
 
+## Recurrence Guards
+
+1. If [sources/api/ltx23-ti2v-audio-api-prompt.json](./sources/api/ltx23-ti2v-audio-api-prompt.json) exists and the upstream workflow has not changed, use it instead of repeating UI-to-API conversion.
+2. If the operator is on Windows, prefer the launcher scripts over hand-running remote bash. They already normalize line endings and protect against stale install directories.
+3. When a comparison batch is about models, keep prompt, image, audio, and duration fixed unless the user explicitly asks to vary them.
+4. Record generation time and GPU headroom together. Peak VRAM without timing context is not enough for capacity planning.
+5. If output files are copied back locally, verify local file sizes against the remote originals before trusting the comparison set.
+
 ## Default Operating Model
 
 1. Run the scripted setup path unless the user explicitly wants a manual notebook walkthrough.

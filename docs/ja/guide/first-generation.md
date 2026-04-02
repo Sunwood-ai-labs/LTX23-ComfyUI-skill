@@ -31,3 +31,15 @@
 - lip-sync と顔の見え方が破綻していない
 - 秒数とアスペクト比がほぼ期待通り
 - remote GPU machine が安定している
+
+## 比較 batch のルール
+
+model 比較が目的なら:
+
+- prompt 固定
+- image 固定
+- audio 固定
+- duration 固定
+- 一度に変えるのは 1-2 個まで
+
+API 実行だけで回したいときは、commit 済みの API prompt を使う方が安全です。

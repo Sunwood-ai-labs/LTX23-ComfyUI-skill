@@ -39,3 +39,15 @@ This repository prefers a script-first workflow for preparing a remote GPU machi
 - `PIP_CONFIG_FILE=/dev/null`
 - stale install-directory backup before clone
 - low-VRAM launch path with `--cache-none`
+
+## Failure checklist
+
+- GPU not visible:
+  - confirm `LD_LIBRARY_PATH=/usr/lib64-nvidia`
+  - confirm `torch.cuda.is_available()` or `/system_stats`
+- `pip` fails for permission reasons:
+  - confirm `PIP_CONFIG_FILE=/dev/null`
+- `/content/ComfyUI` clone fails:
+  - look for stale directories or root-owned remnants
+- remote bash behaves differently from the notebook:
+  - use the launcher scripts instead of replaying notebook shell manually

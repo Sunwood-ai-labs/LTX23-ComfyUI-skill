@@ -62,6 +62,14 @@ The current automation handles three issues that often break ad hoc remote setup
 - broken global `pip` logging configs on shared machines
 - stale or half-created install directories under `/content/ComfyUI`
 
+## 🧯 Recurrence Guards
+
+- Use [sources/api/ltx23-ti2v-audio-api-prompt.json](./sources/api/ltx23-ti2v-audio-api-prompt.json) for direct `/prompt` runs when the upstream workflow has not changed.
+- Use the PowerShell launchers instead of replaying notebook shell lines from memory. They already handle CRLF normalization, stale install directories, and shared-host pip quirks.
+- When comparing model variants, keep prompt, image, audio, and duration fixed unless the batch goal explicitly says otherwise.
+- After every real batch, commit a manifest under [experiments](./experiments/) that includes generation time, peak VRAM, headroom, and output filenames.
+- When copying many outputs back locally, verify the copied file sizes against the remote originals so partial transfers do not silently contaminate comparisons.
+
 ## 📚 Documentation
 
 - [Docs site](https://sunwood-ai-labs.github.io/LTX23-ComfyUI-skill/)

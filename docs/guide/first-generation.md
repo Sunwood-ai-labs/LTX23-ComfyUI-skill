@@ -36,3 +36,15 @@ Keep the notebook as a dependency reference:
 - lip-sync and facial framing are plausible
 - duration and aspect ratio match expectations closely enough
 - the remote GPU machine stays stable under the chosen settings
+
+## Comparison rule
+
+If the batch is about model comparison:
+
+- keep prompt fixed
+- keep image fixed
+- keep audio fixed
+- keep duration fixed
+- change only one or two variables at a time
+
+If you already have [the committed API prompt](https://github.com/Sunwood-ai-labs/LTX23-ComfyUI-skill/blob/main/sources/api/ltx23-ti2v-audio-api-prompt.json), use that for direct `/prompt` execution instead of repeating UI export.

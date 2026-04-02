@@ -64,6 +64,18 @@ Then start ComfyUI:
 - If the SSH user cannot write `/content`, the remote installer uses `sudo` to create and hand over the directory.
 - If `sudo` is unavailable and `/content` is not writable, pass a writable home-directory path with `-RemoteInstallDir`.
 
+## Failure checklist
+
+- GPU not visible:
+  - confirm `LD_LIBRARY_PATH=/usr/lib64-nvidia`
+  - confirm `torch.cuda.is_available()` and `/system_stats`
+- pip fails with logging or permissions:
+  - confirm `PIP_CONFIG_FILE=/dev/null`
+- clone fails under `/content/ComfyUI`:
+  - check for stale directories or root-owned remnants
+- launcher succeeds but remote shell behaves strangely:
+  - prefer the launcher scripts over hand-pasted notebook shell so line endings are normalized before bash executes
+
 ## When to fall back to manual notebook replay
 
 Use the raw notebook only when:
