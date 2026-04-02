@@ -8,11 +8,12 @@ The JSON's `extra.linearData.inputs` exposes these App-facing controls:
 | --- | --- | --- | --- |
 | `Text To Video (no image ref)` | `PrimitiveBoolean` 290 | `false` | Switches the workflow toward T2V, but the notebook still recommends loading an image to avoid errors. |
 | `PROMPT` | `PrimitiveStringMultiline` 352 | sample prompt | Raw user prompt. Can be passed through the prompt-enhancer path. |
+| `Enhanced Prompt` | node 351 surface | sample refusal text in the archived file | Treat this as an enhancer-side surface or debug field, not the canonical authoring field. |
 | `image` | `LoadImage` 167 | sample PNG | Reference frame for image-to-video and still recommended as a fallback asset in T2V mode. |
 | `WIDTH` | `INTConstant` 292 | `480` | The App default is portrait. |
 | `HEIGHT` | `INTConstant` 293 | `832` | Together with width, this makes the packaged App default `480x832`. |
 | `LENGTH (in seconds)` | `INTConstant` 291 | `10` | Converted into frame count inside the graph. |
-| `audio` | `LoadAudio` 372 | sample MP3 | Source audio for lip-sync / audio-conditioned generation. |
+| `audio` | `LoadAudio` 372 | sample MP3 | Source audio for lip-sync or audio-conditioned generation. |
 | `start_index` | `TrimAudioDuration` 373 | `1` | Audio trim start point. |
 | `USE ONLY VOCALS` | `ComfySwitchNode` 382 | `true` | When true, the vocal-isolated output is fed into audio encoding. |
 | `noise_seed` | `RandomNoise` 115 | `43` | Fixed sample seed in the packaged workflow. |
@@ -28,8 +29,21 @@ These defaults exist in the graph even though they are not exposed through `line
 - `LTXVScheduler (for more steps)`: `[8, 2.05, 0.95, true, 0.1]`
 - `LTX2_NAG`: `[11, 0.25, 2.5, true]`
 - Image preprocess node: `LTXVPreprocess` with `33`
+- `Custom Audio = true | LTX Audio = false`: internal latent-path switch, default `true`
+- Output node: `VHS_VideoCombine` writing H.264 MP4 with `yuv420p`, `crf = 19`, and metadata saving enabled
 
 If the user needs these changed from the App side, the workflow itself must be edited.
+
+## Derived Behavior
+
+- Frame count is calculated as:
+
+```text
+1 + 8 * round(seconds * fps / 8)
+```
+
+- With the archived defaults, `10` seconds at `24` fps becomes `241` frames.
+- Audio trim duration is derived from `frames / fps`, so the uploaded audio segment is trimmed to the computed clip length instead of only the raw requested seconds.
 
 ## Prompt Flow
 
@@ -54,6 +68,27 @@ When explaining or adapting the workflow, keep those layers distinct.
 - Avoid instructions that fight the image; consistency matters.
 - Keep camera motion explicit. If the user did not ask for camera movement, do not add it.
 
+## Mode Matrix
+
+### Image plus custom audio
+
+- This is the packaged default behavior.
+- Keep `Text To Video (no image ref) = false`.
+- Provide an image plus audio.
+- Leave `USE ONLY VOCALS` on when lip-sync quality matters more than preserving the whole mix.
+
+### Text plus custom audio
+
+- Set `Text To Video (no image ref) = true`.
+- Keep an image loaded anyway because the notebook explicitly warns this helps avoid errors.
+- Keep using uploaded audio; the packaged App V3 is wired for that path.
+
+### Generated LTX audio instead of uploaded audio
+
+- The graph has an internal switch for this path.
+- The packaged App V3 does not expose that switch through `linearData`.
+- If the user wants pure LTX audio generation, explain that a workflow edit is required.
+
 ## Size, FPS, and Duration Guidance
 
 The embedded notes recommend:
@@ -72,7 +107,7 @@ Two different hints appear in the upstream material:
 - Embedded note text says invalid width, height, or frame settings are silently adjusted to nearby valid values.
 - The graph itself clearly derives frame count with `1 + 8 * round(seconds * fps / 8)`.
 
-For width and height, the note text is more ambiguous than the graph. The practical guidance is:
+For width and height, the practical guidance is:
 
 - prefer clean multiples of `32`
 - expect silent adjustment if the value is not ideal
@@ -96,3 +131,9 @@ This is useful when explaining custom-audio lip-sync:
 ## LoRA Caveat
 
 One embedded note warns that some user-made LTX-2 LoRAs are not trained on audio and can introduce noisy output audio. If that happens, prefer the advanced KJNodes LoRA loader path and set non-video strength to zero.
+
+## Practical Smoke-Test Presets
+
+- `480x832`, `24 fps`, `3-5 sec`, short clean dialog or singing clip
+- `832x480`, `24 fps`, `5 sec`, simple motion and clean vocals
+- `960x544`, `24 fps`, `5-8 sec`, only after the cheaper run succeeds
