@@ -65,8 +65,10 @@ The current automation handles three issues that often break ad hoc remote setup
 - [Docs site](https://sunwood-ai-labs.github.io/LTX23-ComfyUI-skill/)
 - [Scripted setup guide](./references/scripted-setup.md)
 - [Setup and models reference](./references/setup-and-models.md)
+- [Experiment tracking reference](./references/experiment-tracking.md)
 - [Workflow and parameters reference](./references/usage-and-parameters.md)
 - [Source materials and provenance](./references/source-materials.md)
+- [Experiment manifests](./experiments/)
 - [Japanese README](./README.ja.md)
 
 ## 🧩 Repository Layout
@@ -90,6 +92,7 @@ The current automation handles three issues that often break ad hoc remote setup
 - [docs](./docs/): public English and Japanese documentation
 - [references](./references/): operator-focused setup and workflow notes
 - [scripts](./scripts/): remote GPU setup and start automation
+- [experiments](./experiments/): committed metadata for real generation batches
 
 ## 🪪 License
 

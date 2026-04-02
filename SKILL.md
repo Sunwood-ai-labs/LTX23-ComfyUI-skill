@@ -18,6 +18,7 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
   - detailed usage: [references/scripted-setup.md](./references/scripted-setup.md)
 - Read [references/source-materials.md](./references/source-materials.md) if provenance or upstream comparison matters.
 - Read [references/setup-and-models.md](./references/setup-and-models.md) before environment or model work.
+- Read [references/experiment-tracking.md](./references/experiment-tracking.md) when running real sweeps or comparing model variants on the remote GPU machine.
 - Read [references/usage-and-parameters.md](./references/usage-and-parameters.md) before changing prompts or generation settings.
 - If you add Python helpers in this repo, run them with `uv run ...`.
 
@@ -39,6 +40,22 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
    - `PIP_CONFIG_FILE=/dev/null`
    - writable install-directory resolution for `/content/ComfyUI` versus `~/ComfyUI`
 6. If setup fails, inspect which step broke and patch the script rather than falling back to ad hoc command replay.
+
+## Experiment Tracking Rules
+
+1. When you run a real generation batch, save a committed manifest under `experiments/<date>-<slug>/`.
+2. If prompt, image, audio, or duration are fixed, record them once as top-level fixed inputs.
+3. For each run, record:
+   - model file
+   - width and height
+   - seed
+   - key switches such as `USE ONLY VOCALS`
+   - `prompt_id`
+   - output filename and remote path
+   - media duration and size
+   - GPU peak memory, total memory, headroom, and peak utilization
+4. Prefer comparing one or two variables at a time so the manifest stays readable.
+5. If the user says prompt or image should stay fixed, do not change them across the batch.
 
 ## Default Operating Model
 

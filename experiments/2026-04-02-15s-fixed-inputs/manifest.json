@@ -1,0 +1,118 @@
+{
+  "batch_id": "2026-04-02-15s-fixed-inputs",
+  "created_at": "2026-04-02T12:10:00+09:00",
+  "runtime": {
+    "host_type": "remote GPU machine",
+    "gpu_name": "NVIDIA L4",
+    "gpu_total_memory_mib": 23034,
+    "comfyui_output_dir": "/content/ComfyUI/output"
+  },
+  "fixed_inputs": {
+    "image": "momiji-studio_0008.png",
+    "audio": "midnight-memory-intro-chorus1.wav",
+    "duration_seconds": 15,
+    "prompt": "Cinematic anime style. A fox-girl singer performs with perfect lip-sync to the attached audio inside a high-end recording studio at night. She has long auburn hair, golden eyes, fox ears, and several fluffy fox tails. She is wearing a detailed floral kimono and black-and-gold studio headphones, singing into a large condenser microphone with a pop filter. Her face shows tender, heartfelt emotion as she sings. The shot is a fixed front-facing medium close-up with no camera movement, no panning, no zoom, and no angle change. Her face remains centered, visible, and in crisp focus throughout. Warm studio lights cast a soft glow on her skin and hair. Behind her, a large window reveals a blurred city skyline with colorful night bokeh. High detail, shallow depth of field, gentle atmosphere, cinematic lighting, refined anime aesthetics."
+  },
+  "runs": [
+    {
+      "id": "exp01-q4km-960x544-vocals-on",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_K_M.gguf",
+        "width": 960,
+        "height": 544,
+        "seed": 43,
+        "use_only_vocals": true
+      },
+      "execution": {
+        "prompt_id": "ba1a69b2-4b0b-4bfa-823e-f94b8482954f",
+        "status": "success"
+      },
+      "output": {
+        "filename": "exp01-q4km-960x544-vocals-on_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/exp01-q4km-960x544-vocals-on_00001-audio.mp4",
+        "duration_seconds": 15.042,
+        "size_bytes": 3003282
+      },
+      "gpu": {
+        "peak_memory_used_mib": 18354,
+        "headroom_mib": 4680,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "exp02-q4_1-960x544-vocals-on",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_1.gguf",
+        "width": 960,
+        "height": 544,
+        "seed": 43,
+        "use_only_vocals": true
+      },
+      "execution": {
+        "prompt_id": "8d1d5174-dcb8-4705-ac15-46d089d4185a",
+        "status": "success"
+      },
+      "output": {
+        "filename": "exp02-q4_1-960x544-vocals-on_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/exp02-q4_1-960x544-vocals-on_00001-audio.mp4",
+        "duration_seconds": 15.042,
+        "size_bytes": 3335054
+      },
+      "gpu": {
+        "peak_memory_used_mib": 17842,
+        "headroom_mib": 5192,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "exp03-q5km-960x544-vocals-on",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q5_K_M.gguf",
+        "width": 960,
+        "height": 544,
+        "seed": 43,
+        "use_only_vocals": true
+      },
+      "execution": {
+        "prompt_id": "fc119049-ad6e-4a1b-9e8c-4cc466c923ca",
+        "status": "success"
+      },
+      "output": {
+        "filename": "exp03-q5km-960x544-vocals-on_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/exp03-q5km-960x544-vocals-on_00001-audio.mp4",
+        "duration_seconds": 15.042,
+        "size_bytes": 3310816
+      },
+      "gpu": {
+        "peak_memory_used_mib": 20018,
+        "headroom_mib": 3016,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "exp04-q4km-960x544-vocals-off",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_K_M.gguf",
+        "width": 960,
+        "height": 544,
+        "seed": 43,
+        "use_only_vocals": false
+      },
+      "execution": {
+        "prompt_id": "64a2c734-ce22-4b4c-885d-5304dc49a76c",
+        "status": "success"
+      },
+      "output": {
+        "filename": "exp04-q4km-960x544-vocals-off_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/exp04-q4km-960x544-vocals-off_00001-audio.mp4",
+        "duration_seconds": 15.042,
+        "size_bytes": 2968458
+      },
+      "gpu": {
+        "peak_memory_used_mib": 18354,
+        "headroom_mib": 4680,
+        "peak_utilization_pct": 100
+      }
+    }
+  ]
+}
