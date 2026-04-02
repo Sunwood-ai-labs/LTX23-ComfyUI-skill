@@ -36,6 +36,8 @@
       },
       "gpu": {
         "peak_memory_used_mib": 18354,
+        "estimated_minimum_vram_gib": 18,
+        "recommended_vram_gib": 20,
         "headroom_mib": 4680,
         "peak_utilization_pct": 100
       }
@@ -62,6 +64,8 @@
       },
       "gpu": {
         "peak_memory_used_mib": 17842,
+        "estimated_minimum_vram_gib": 18,
+        "recommended_vram_gib": 20,
         "headroom_mib": 5192,
         "peak_utilization_pct": 100
       }
@@ -88,6 +92,8 @@
       },
       "gpu": {
         "peak_memory_used_mib": 20018,
+        "estimated_minimum_vram_gib": 20,
+        "recommended_vram_gib": 22,
         "headroom_mib": 3016,
         "peak_utilization_pct": 100
       }
@@ -114,6 +120,8 @@
       },
       "gpu": {
         "peak_memory_used_mib": 18354,
+        "estimated_minimum_vram_gib": 18,
+        "recommended_vram_gib": 20,
         "headroom_mib": 4680,
         "peak_utilization_pct": 100
       }

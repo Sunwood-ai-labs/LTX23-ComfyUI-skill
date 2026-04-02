@@ -21,6 +21,21 @@
 | `exp03-q5km-960x544-vocals-on` | `Q5_K_M` | `true` | `exp03-q5km-960x544-vocals-on_00001-audio.mp4` | `480.440s` | `20018 MiB` | `3016 MiB` | `3310816` |
 | `exp04-q4km-960x544-vocals-off` | `Q4_K_M` | `false` | `exp04-q4km-960x544-vocals-off_00001-audio.mp4` | `458.638s` | `18354 MiB` | `4680 MiB` | `2968458` |
 
+## VRAM Guide
+
+| Run | Peak VRAM | Estimated Minimum | Recommended VRAM | L4 Headroom |
+| --- | --- | --- | --- | --- |
+| `exp01-q4km-960x544-vocals-on` | `18354 MiB` | `18 GiB` | `20 GiB` | `4680 MiB` |
+| `exp02-q4_1-960x544-vocals-on` | `17842 MiB` | `18 GiB` | `20 GiB` | `5192 MiB` |
+| `exp03-q5km-960x544-vocals-on` | `20018 MiB` | `20 GiB` | `22 GiB` | `3016 MiB` |
+| `exp04-q4km-960x544-vocals-off` | `18354 MiB` | `18 GiB` | `20 GiB` | `4680 MiB` |
+
+Interpretation:
+
+- `Estimated Minimum` is the observed peak rounded up to a practical VRAM class.
+- `Recommended VRAM` adds a small safety margin so the run is less likely to fail from fragmentation or background allocation spikes.
+- On this batch, `Q5_K_M` is the tightest fit and is best treated as a `22 GiB` class workload.
+
 ## Observations
 
 - `Q4_1` used less VRAM than the `Q4_K_M` baseline and left the most headroom in this batch.

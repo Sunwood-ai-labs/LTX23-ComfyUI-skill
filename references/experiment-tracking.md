@@ -25,6 +25,8 @@ For every experiment batch, keep these items together:
 - GPU telemetry
   - total VRAM
   - peak used VRAM
+  - estimated minimum VRAM
+  - recommended VRAM target
   - estimated headroom
   - peak utilization
 
