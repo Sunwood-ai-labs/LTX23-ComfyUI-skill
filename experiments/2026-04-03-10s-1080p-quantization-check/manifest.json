@@ -1,0 +1,95 @@
+{
+  "batch_id": "2026-04-03-10s-1080p-quantization-check",
+  "created_at": "2026-04-03T02:10:00+09:00",
+  "runtime": {
+    "host_type": "remote GPU machine",
+    "gpu_name": "NVIDIA L4",
+    "gpu_total_memory_mib": 23034,
+    "comfyui_output_dir": "/content/ComfyUI/output"
+  },
+  "fixed_inputs": {
+    "image": "momiji-studio_0008.png",
+    "audio": "midnight-memory-intro-chorus1.wav",
+    "prompt": "Cinematic anime style. A fox-girl singer performs with perfect lip-sync to the attached audio inside a high-end recording studio at night. She has long auburn hair, golden eyes, fox ears, and several fluffy fox tails. She is wearing a detailed floral kimono and black-and-gold studio headphones, singing into a large condenser microphone with a pop filter. Her face shows tender, heartfelt emotion as she sings. The shot is a fixed front-facing medium close-up with no camera movement, no panning, no zoom, and no angle change. Her face remains centered, visible, and in crisp focus throughout. Warm studio lights cast a soft glow on her skin and hair. Behind her, a large window reveals a blurred city skyline with colorful night bokeh. High detail, shallow depth of field, gentle atmosphere, cinematic lighting, refined anime aesthetics.",
+    "duration_seconds": 10,
+    "width": 1920,
+    "height": 1088,
+    "seed": 43,
+    "use_only_vocals": true
+  },
+  "comparison_question": "Which lower-quantized models can complete a 10-second 1080p-class run on the L4 with fixed prompt, image, and audio?",
+  "runs": [
+    {
+      "id": "check10-q4_1-1920x1088",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_1.gguf"
+      },
+      "execution": {
+        "prompt_id": "32b2e4f4-1646-4db7-ab77-ed88cadcf57a",
+        "status": "success",
+        "generation_time_seconds": 1153.463
+      },
+      "output": {
+        "filename": "check10-q4_1-1920x1088_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/check10-q4_1-1920x1088_00001-audio.mp4",
+        "duration_seconds": 10.042,
+        "size_bytes": 7109458
+      },
+      "gpu": {
+        "peak_memory_used_mib": 18420,
+        "estimated_minimum_vram_gib": 18,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 4614,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "check10-q3km-1920x1088",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q3_K_M.gguf"
+      },
+      "execution": {
+        "prompt_id": "aa2b6145-5bd6-4c72-aa1f-b4b60d8cc08b",
+        "status": "success",
+        "generation_time_seconds": 1102.948
+      },
+      "output": {
+        "filename": "check10-q3km-1920x1088_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/check10-q3km-1920x1088_00001-audio.mp4",
+        "duration_seconds": 10.042,
+        "size_bytes": 7256683
+      },
+      "gpu": {
+        "peak_memory_used_mib": 18420,
+        "estimated_minimum_vram_gib": 18,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 4614,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "check10-q2k-1920x1088",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q2_K.gguf"
+      },
+      "execution": {
+        "prompt_id": "a0f550e0-aeae-4d16-b2fa-3c1dac42f8f4",
+        "status": "success",
+        "generation_time_seconds": 1083.705
+      },
+      "output": {
+        "filename": "check10-q2k-1920x1088_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/check10-q2k-1920x1088_00001-audio.mp4",
+        "duration_seconds": 10.042,
+        "size_bytes": 11096678
+      },
+      "gpu": {
+        "peak_memory_used_mib": 17652,
+        "estimated_minimum_vram_gib": 18,
+        "recommended_vram_gib": 19,
+        "headroom_mib": 5382,
+        "peak_utilization_pct": 100
+      }
+    }
+  ]
+}
