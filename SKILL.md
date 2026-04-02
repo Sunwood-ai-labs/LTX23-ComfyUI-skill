@@ -20,12 +20,14 @@ Use this skill when the user wants to work from `sources/upstream/isi-dev/LTX_2.
 - Read [references/setup-and-models.md](./references/setup-and-models.md) before environment or model work.
 - Read [references/experiment-tracking.md](./references/experiment-tracking.md) when running real sweeps or comparing model variants on the remote GPU machine.
 - Read [references/usage-and-parameters.md](./references/usage-and-parameters.md) before changing prompts or generation settings.
+- Use [sources/api/ltx23-ti2v-audio-api-prompt.json](./sources/api/ltx23-ti2v-audio-api-prompt.json) as the committed API-format base prompt when queueing runs directly through ComfyUI `/prompt`.
 - If you add Python helpers in this repo, run them with `uv run ...`.
 
 ## Choose the Source of Truth
 
 - Use the App JSON when the task is "import this into ComfyUI" or "explain which controls the App exposes".
 - Use the notebook when the task is "bootstrap the remote GPU machine / ComfyUI stack" or "recover the dependency list".
+- Use the committed API prompt when the task is "run this workflow through ComfyUI API without repeating the UI export step".
 - When the task is actual environment setup on a remote Linux GPU host, prefer running the scripted bootstrap that was derived from the notebook instead of replaying notebook shell lines manually.
 - When notebook notes and graph internals disagree, prefer the actual JSON graph for exposed controls and use the notes as soft operating guidance. Call out mismatches instead of flattening them.
 

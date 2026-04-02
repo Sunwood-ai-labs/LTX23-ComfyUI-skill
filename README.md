@@ -34,6 +34,8 @@ This repository turns the archived Isi-dev notebook and App workflow into a reus
 
 The upstream notebook and App JSON remain archived under [sources/upstream/isi-dev](./sources/upstream/isi-dev/). The working guidance lives in [SKILL.md](./SKILL.md), [references](./references/), and the scripts under [scripts](./scripts/).
 
+For API-only execution, use the committed API-format prompt in [sources/api/ltx23-ti2v-audio-api-prompt.json](./sources/api/ltx23-ti2v-audio-api-prompt.json) instead of re-exporting from the UI every time.
+
 ## 🚀 Quick Start
 
 1. Run [run-remote-gpu-setup.ps1](./scripts/run-remote-gpu-setup.ps1) from Windows to install ComfyUI, the required custom nodes, and the LTX 2.3 model set on the remote GPU machine.
@@ -64,6 +66,7 @@ The current automation handles three issues that often break ad hoc remote setup
 
 - [Docs site](https://sunwood-ai-labs.github.io/LTX23-ComfyUI-skill/)
 - [Scripted setup guide](./references/scripted-setup.md)
+- [API prompt source](./sources/api/README.md)
 - [Setup and models reference](./references/setup-and-models.md)
 - [Experiment tracking reference](./references/experiment-tracking.md)
 - [Workflow and parameters reference](./references/usage-and-parameters.md)
@@ -93,6 +96,7 @@ The current automation handles three issues that often break ad hoc remote setup
 - [references](./references/): operator-focused setup and workflow notes
 - [scripts](./scripts/): remote GPU setup and start automation
 - [experiments](./experiments/): committed metadata for real generation batches
+- [sources/api](./sources/api/): committed API-format prompt data
 
 ## 🪪 License
 

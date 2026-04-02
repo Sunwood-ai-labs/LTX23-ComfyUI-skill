@@ -1,0 +1,266 @@
+{
+  "batch_id": "2026-04-02-20s-first-minute",
+  "created_at": "2026-04-02T14:50:00+09:00",
+  "runtime": {
+    "host_type": "remote GPU machine",
+    "gpu_name": "NVIDIA L4",
+    "gpu_total_memory_mib": 23034,
+    "comfyui_output_dir": "/content/ComfyUI/output",
+    "local_output_dir": "outputs/2026-04-02-20s-first-minute-http"
+  },
+  "fixed_inputs": {
+    "image": "momiji-studio_0008.png",
+    "audio": "midnight-memory-intro-chorus1.wav",
+    "duration_seconds": 20,
+    "prompt": "Cinematic anime style. A fox-girl singer performs with perfect lip-sync to the attached audio inside a high-end recording studio at night. She has long auburn hair, golden eyes, fox ears, and several fluffy fox tails. She is wearing a detailed floral kimono and black-and-gold studio headphones, singing into a large condenser microphone with a pop filter. Her face shows tender, heartfelt emotion as she sings. The shot is a fixed front-facing medium close-up with no camera movement, no panning, no zoom, and no angle change. Her face remains centered, visible, and in crisp focus throughout. Warm studio lights cast a soft glow on her skin and hair. Behind her, a large window reveals a blurred city skyline with colorful night bokeh. High detail, shallow depth of field, gentle atmosphere, cinematic lighting, refined anime aesthetics.",
+    "width": 960,
+    "height": 544,
+    "seed": 43,
+    "use_only_vocals": true
+  },
+  "runs": [
+    {
+      "id": "seg01-q5km-s00-20",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q5_K_M.gguf",
+        "segment_start_seconds": 0,
+        "segment_end_target_seconds": 20
+      },
+      "execution": {
+        "prompt_id": "bde9245d-24c3-40de-b8d2-bfcdcb33934e",
+        "status": "success",
+        "generation_time_seconds": 565.023
+      },
+      "output": {
+        "filename": "seg01-q5km-s00-20_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg01-q5km-s00-20_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg01-q5km-s00-20_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 4019964
+      },
+      "gpu": {
+        "peak_memory_used_mib": 20884,
+        "estimated_minimum_vram_gib": 21,
+        "recommended_vram_gib": 22,
+        "headroom_mib": 2150,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg02-q5km-s20-40",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q5_K_M.gguf",
+        "segment_start_seconds": 20,
+        "segment_end_target_seconds": 40
+      },
+      "execution": {
+        "prompt_id": "e9511e9b-afad-4eb9-970d-bba17dd540cc",
+        "status": "success",
+        "generation_time_seconds": 566.645
+      },
+      "output": {
+        "filename": "seg02-q5km-s20-40_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg02-q5km-s20-40_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg02-q5km-s20-40_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 3896106
+      },
+      "gpu": {
+        "peak_memory_used_mib": 20884,
+        "estimated_minimum_vram_gib": 21,
+        "recommended_vram_gib": 22,
+        "headroom_mib": 2150,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg03-q5km-s40-60",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q5_K_M.gguf",
+        "segment_start_seconds": 40,
+        "segment_end_target_seconds": 60
+      },
+      "execution": {
+        "prompt_id": "6b7b94a5-0ced-4792-a2e3-244c85566c63",
+        "status": "success",
+        "generation_time_seconds": 568.893
+      },
+      "output": {
+        "filename": "seg03-q5km-s40-60_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg03-q5km-s40-60_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg03-q5km-s40-60_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 4286672
+      },
+      "gpu": {
+        "peak_memory_used_mib": 20884,
+        "estimated_minimum_vram_gib": 21,
+        "recommended_vram_gib": 22,
+        "headroom_mib": 2150,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg04-q4km-s00-20",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_K_M.gguf",
+        "segment_start_seconds": 0,
+        "segment_end_target_seconds": 20
+      },
+      "execution": {
+        "prompt_id": "8e479053-5a09-455d-8571-8cc6b409c5d8",
+        "status": "success",
+        "generation_time_seconds": 556.539
+      },
+      "output": {
+        "filename": "seg04-q4km-s00-20_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg04-q4km-s00-20_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg04-q4km-s00-20_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 3822918
+      },
+      "gpu": {
+        "peak_memory_used_mib": 19220,
+        "estimated_minimum_vram_gib": 19,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 3814,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg05-q4km-s20-40",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_K_M.gguf",
+        "segment_start_seconds": 20,
+        "segment_end_target_seconds": 40
+      },
+      "execution": {
+        "prompt_id": "1998eb68-ff7b-480d-bf86-67ddeb2a43e9",
+        "status": "success",
+        "generation_time_seconds": 556.51
+      },
+      "output": {
+        "filename": "seg05-q4km-s20-40_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg05-q4km-s20-40_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg05-q4km-s20-40_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 3889219
+      },
+      "gpu": {
+        "peak_memory_used_mib": 19220,
+        "estimated_minimum_vram_gib": 19,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 3814,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg06-q4km-s40-60",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_K_M.gguf",
+        "segment_start_seconds": 40,
+        "segment_end_target_seconds": 60
+      },
+      "execution": {
+        "prompt_id": "353d3e63-40b6-48e5-af33-9babf84d7855",
+        "status": "success",
+        "generation_time_seconds": 556.802
+      },
+      "output": {
+        "filename": "seg06-q4km-s40-60_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg06-q4km-s40-60_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg06-q4km-s40-60_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 3958852
+      },
+      "gpu": {
+        "peak_memory_used_mib": 19220,
+        "estimated_minimum_vram_gib": 19,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 3814,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg07-q4_1-s00-20",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_1.gguf",
+        "segment_start_seconds": 0,
+        "segment_end_target_seconds": 20
+      },
+      "execution": {
+        "prompt_id": "f1a7418b-5533-498b-ba07-d8604e8252b9",
+        "status": "success",
+        "generation_time_seconds": 554.482
+      },
+      "output": {
+        "filename": "seg07-q4_1-s00-20_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg07-q4_1-s00-20_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg07-q4_1-s00-20_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 4331579
+      },
+      "gpu": {
+        "peak_memory_used_mib": 18676,
+        "estimated_minimum_vram_gib": 19,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 4358,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg08-q4_1-s20-40",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_1.gguf",
+        "segment_start_seconds": 20,
+        "segment_end_target_seconds": 40
+      },
+      "execution": {
+        "prompt_id": "82891956-b3f6-43b1-99ed-4ab6b5dd1023",
+        "status": "success",
+        "generation_time_seconds": 555.416
+      },
+      "output": {
+        "filename": "seg08-q4_1-s20-40_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg08-q4_1-s20-40_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg08-q4_1-s20-40_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 4642396
+      },
+      "gpu": {
+        "peak_memory_used_mib": 18676,
+        "estimated_minimum_vram_gib": 19,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 4358,
+        "peak_utilization_pct": 100
+      }
+    },
+    {
+      "id": "seg09-q4_1-s40-60",
+      "params": {
+        "ltx_model": "ltx-2.3-22b-dev-Q4_1.gguf",
+        "segment_start_seconds": 40,
+        "segment_end_target_seconds": 60
+      },
+      "execution": {
+        "prompt_id": "9943f02d-6e14-4033-80be-fc56c06da819",
+        "status": "success",
+        "generation_time_seconds": 555.436
+      },
+      "output": {
+        "filename": "seg09-q4_1-s40-60_00001-audio.mp4",
+        "remote_path": "/content/ComfyUI/output/seg09-q4_1-s40-60_00001-audio.mp4",
+        "local_path": "outputs/2026-04-02-20s-first-minute-http/seg09-q4_1-s40-60_00001-audio.mp4",
+        "duration_seconds": 20.042,
+        "size_bytes": 4698221
+      },
+      "gpu": {
+        "peak_memory_used_mib": 18676,
+        "estimated_minimum_vram_gib": 19,
+        "recommended_vram_gib": 20,
+        "headroom_mib": 4358,
+        "peak_utilization_pct": 100
+      }
+    }
+  ]
+}
