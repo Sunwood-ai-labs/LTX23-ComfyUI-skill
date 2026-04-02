@@ -1,5 +1,17 @@
 # Setup and Models
 
+## Preferred setup path
+
+Use the script-first bootstrap by default:
+
+- local setup launcher: [../scripts/run-colab-setup.ps1](../scripts/run-colab-setup.ps1)
+- local start launcher: [../scripts/run-colab-start.ps1](../scripts/run-colab-start.ps1)
+- remote installer: [../scripts/setup-remote-ltx23-comfyui.sh](../scripts/setup-remote-ltx23-comfyui.sh)
+- remote starter: [../scripts/start-remote-comfyui.sh](../scripts/start-remote-comfyui.sh)
+- operator guide: [scripted-setup.md](./scripted-setup.md)
+
+Fall back to manual notebook replay only when you are debugging a specific setup step.
+
 ## Preserved Upstream Artifacts
 
 - `sources/upstream/isi-dev/LTX_2.3_Image_or_Text_&_Audio_2_Video_App_V3.json`
@@ -20,6 +32,16 @@ The archived notebook exposes these booleans near the top:
 - `include_MelBandRoFormer = True`
 
 For the provided App V3 workflow, everything except `ComfyUI-Manager` should be treated as required unless you have direct proof otherwise.
+
+## Remote bootstrap quirks already observed
+
+The current Colab-over-SSH environment needed three concrete fixes before the notebook setup became automatable:
+
+- `LD_LIBRARY_PATH=/usr/lib64-nvidia` had to be exported so `nvidia-smi` and `torch.cuda` could see the L4 GPU.
+- `PIP_CONFIG_FILE=/dev/null` had to be set because the host's global pip config forced `log=/var/log/pip.log`, which is not writable for the normal user.
+- `/content` was not directly writable by the SSH user, so the installer needs either `sudo`-based directory creation and `chown`, or a fallback under `$HOME`.
+
+The setup scripts in this repo handle those cases directly.
 
 ## Environment Bootstrap from the Notebook
 

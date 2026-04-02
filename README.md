@@ -10,6 +10,16 @@ This workspace is on Windows, so `Skill.md` and `SKILL.md` resolve to the same f
 
 - [SKILL.md](./SKILL.md)
   - Main skill instructions
+- [scripts/run-colab-setup.ps1](./scripts/run-colab-setup.ps1)
+  - Windows launcher that streams the remote setup script over SSH
+- [scripts/run-colab-start.ps1](./scripts/run-colab-start.ps1)
+  - Windows launcher that starts ComfyUI on the remote host
+- [scripts/setup-remote-ltx23-comfyui.sh](./scripts/setup-remote-ltx23-comfyui.sh)
+  - Remote Linux bootstrap script derived from the upstream notebook
+- [scripts/start-remote-comfyui.sh](./scripts/start-remote-comfyui.sh)
+  - Remote Linux start script for ComfyUI
+- [references/scripted-setup.md](./references/scripted-setup.md)
+  - Script-first setup flow and options
 - [references/source-materials.md](./references/source-materials.md)
   - Upstream URLs, local archive paths, and source roles
 - [references/setup-and-models.md](./references/setup-and-models.md)
@@ -24,10 +34,13 @@ This workspace is on Windows, so `Skill.md` and `SKILL.md` resolve to the same f
 ## Usage
 
 1. Open [SKILL.md](./SKILL.md).
-2. Read [references/source-materials.md](./references/source-materials.md) when provenance matters.
-3. Read [references/setup-and-models.md](./references/setup-and-models.md) for environment and model setup.
-4. Read [references/usage-and-parameters.md](./references/usage-and-parameters.md) for workflow behavior and tuning.
-5. If you want to edit the upstream workflow, copy it out of `sources/upstream/isi-dev/` first.
+2. For remote setup, run [scripts/run-colab-setup.ps1](./scripts/run-colab-setup.ps1).
+3. Start ComfyUI with [scripts/run-colab-start.ps1](./scripts/run-colab-start.ps1).
+4. Read [references/scripted-setup.md](./references/scripted-setup.md) for the script-first bootstrap flow.
+5. Read [references/source-materials.md](./references/source-materials.md) when provenance matters.
+6. Read [references/setup-and-models.md](./references/setup-and-models.md) for environment and model setup.
+7. Read [references/usage-and-parameters.md](./references/usage-and-parameters.md) for workflow behavior and tuning.
+8. If you want to edit the upstream workflow, copy it out of `sources/upstream/isi-dev/` first.
 
 ## Upstream References
 
@@ -39,5 +52,6 @@ This workspace is on Windows, so `Skill.md` and `SKILL.md` resolve to the same f
 ## Repo Rules
 
 - Keep the upstream JSON and notebook under `sources/upstream/isi-dev/`.
+- Prefer the script-driven bootstrap before replaying notebook commands by hand.
 - Keep the main skill concise and move detail into `references/`.
 - Use `uv run ...` for Python-based helper checks.
