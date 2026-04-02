@@ -1,0 +1,24 @@
+{
+  "name": "ltx23-comfyui-skill",
+  "version": "1.0.0",
+  "description": "This repository packages Isi-dev's `LTX2.3 for Text & Image to Video+Audio with ComfyUI` as a reusable local Codex skill repo. The upstream notebook and App JSON are preserved as source artifacts, while setup notes and parameter guidance live in `SKILL.md` and `references/`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunwood-ai-labs/LTX23-ComfyUI-skill.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sunwood-ai-labs/LTX23-ComfyUI-skill/issues"
+  },
+  "homepage": "https://github.com/Sunwood-ai-labs/LTX23-ComfyUI-skill#readme",
+  "devDependencies": {
+    "playwright": "^1.59.1"
+  }
+}
